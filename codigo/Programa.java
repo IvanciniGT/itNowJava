@@ -29,10 +29,14 @@ public class Programa {
         servidorBDProd.numeroDeDiscos=1;
         servidorBDProd.ips=new ArrayList<String>();
         
-        
-        
+        servidorBDProd.ips.add("127.0.0.1");
+        servidorBDProd.ips.add("172.31.40.94");
         
         System.out.println(servidorBDProd.nombre);
+        System.out.println(servidorBDProd.numeroDeCpus);
+        System.out.println(servidorBDProd.numeroDeDiscos);
+        System.out.println(servidorBDProd.memoria);
+        System.out.println(servidorBDProd.ips);
     }
     
 }

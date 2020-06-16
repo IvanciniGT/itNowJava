@@ -1,14 +1,33 @@
 import java.util.List;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.io.IOException;
 
 public class Servidor { // Definir mi tipo de dato nuevo
     
     // Propiedades
-    int numeroDeCpus;
-    int memoria;
-    int numeroDeDiscos;
-    String nombre;
-    List<String> ips;
+    public int numeroDeCpus;
+    public int memoria;
+    public int numeroDeDiscos;
+    public String nombre;
+    public List<String> ips;
     
+    boolean enviarPing (String ipAddress) {
+        try{ // Intentalo
+            // Construir una IP desde el texto
+            InetAddress ipa = InetAddress.getByName(ipAddress);
+            // Hazle ping
+            return ipa.isReachable(5000);
+        }catch(UnknownHostException uhe){
+            // Si la ip no tiene un formato válido
+            uhe.printStackTrace();
+            return false;
+        }catch(IOException ioe){
+            // Si no tengo red, o tengo problemas de comunicaciones
+            ioe.printStackTrace();
+            return false;
+        }
+    }
 }
 
 
