@@ -1,4 +1,7 @@
+package codigo;
+
 import java.util.ArrayList;
+import codigo.Servidor;
 
 public class Programa { 
     
@@ -31,12 +34,11 @@ public class Programa {
         
         servidorBDProd.ips.add("127.0.0.1");
         servidorBDProd.ips.add("172.31.40.94");
+        servidorBDProd.ips.add("localhost");
+        servidorBDProd.ips.add("local host");
         
-        System.out.println(servidorBDProd.nombre);
-        System.out.println(servidorBDProd.numeroDeCpus);
-        System.out.println(servidorBDProd.numeroDeDiscos);
-        System.out.println(servidorBDProd.memoria);
-        System.out.println(servidorBDProd.ips);
+        servidorBDProd.imprimete();
+        
     }
     
 }

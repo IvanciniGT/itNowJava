@@ -1,3 +1,5 @@
+package codigo;
+
 import java.util.List;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -12,6 +14,21 @@ public class Servidor { // Definir mi tipo de dato nuevo
     public String nombre;
     public List<String> ips;
     
+    
+    // Funciones
+    
+    void imprimete(){
+        System.out.println(this.nombre);
+        System.out.println(this.numeroDeCpus);
+        System.out.println(this.numeroDeDiscos);
+        System.out.println(this.memoria);
+        System.out.println(this.ips);
+        
+        for(String unaIP : this.ips){
+            boolean resultadoPing=this.enviarPing( unaIP );
+            System.out.println("Prueba de ping: " + unaIP + " -> " + resultadoPing);
+        }
+    }
     boolean enviarPing (String ipAddress) {
         try{ // Intentalo
             // Construir una IP desde el texto
