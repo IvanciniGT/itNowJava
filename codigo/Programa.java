@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Programa { 
     
@@ -22,7 +23,15 @@ public class Programa {
         
         Servidor servidorBDProd;  // Variable (Post-it)
         servidorBDProd=new Servidor(); // Crea un nuevo dato (servidor) en la RAM
-        servidorBDProd.nombre="srv_pod1";
+        servidorBDProd.nombre="local";
+        servidorBDProd.numeroDeCpus=2;
+        servidorBDProd.memoria=4000;
+        servidorBDProd.numeroDeDiscos=1;
+        servidorBDProd.ips=new ArrayList<String>();
+        
+        
+        
+        
         System.out.println(servidorBDProd.nombre);
     }
     

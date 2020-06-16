@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Servidor { // Definir mi tipo de dato nuevo
     
@@ -6,7 +7,7 @@ public class Servidor { // Definir mi tipo de dato nuevo
     int memoria;
     int numeroDeDiscos;
     String nombre;
-    //List<String> ips;
+    List<String> ips;
     
 }
 
