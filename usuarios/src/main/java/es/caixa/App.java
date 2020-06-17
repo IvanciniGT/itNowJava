@@ -10,12 +10,14 @@ public class App{
         ivan.setNombre("Ivan");
         ivan.setApellidos("Osuna");
         ivan.setEdad(42);
-
+        miGestor.datosUsuarioModificados(ivan);
+        
         Usuario antonio=miGestor.newUsuario("antonio@gmail.com");
         antonio.setNombre("Antonio");
         antonio.setApellidos("Lopez");
         antonio.setEdad(32);
-        
+        miGestor.datosUsuarioModificados(antonio);
+
         // Recuperar 1 de ellos e imprimirlo por la consola
         Usuario paraConsultar=miGestor.getUsuario("antonio@gmail.com");
         System.out.println("Nombre: "+paraConsultar.getNombre());
