@@ -3,6 +3,8 @@ package es.caixa;
 import java.util.Map;
 import java.util.HashMap;
 import java.sql.*;
+import javax.sql.*;
+import javax.naming.*;
 
 public class GestorUsuarios{
     
@@ -54,7 +56,7 @@ public class GestorUsuarios{
         }
     }
     
-    void datosUsuarioModificados(Usuario modificado){
+    public void datosUsuarioModificados(Usuario modificado){
         try{
             Connection miConexion=getConn();
             Statement miComando = (Statement) miConexion.createStatement();
@@ -68,7 +70,7 @@ public class GestorUsuarios{
     }
     
     
-    void borrarUsuario(Usuario paraBorrar){
+    public void borrarUsuario(Usuario paraBorrar){
         try{
             Connection miConexion=getConn();
             Statement miComando = (Statement) miConexion.createStatement();
@@ -78,11 +80,23 @@ public class GestorUsuarios{
             e.printStackTrace();
         }
     }
-    
+    /*
     Connection getConn(){
         try{
             Class.forName("org.mariadb.jdbc.Driver"); // Dar de alta el driver MARIADB
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://172.19.0.2/usuarios", "root", "password");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://mariadb/usuarios", "root", "password");
+            return conn;
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }*/
+    
+    Connection getConn(){
+        try{
+            Context ctx = new InitialContext();
+            DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/mimariadb");
+            Connection conn = ds.getConnection();    
             return conn;
         }catch(Exception e){
             e.printStackTrace();

@@ -18,6 +18,8 @@ public class App{
         antonio.setEdad(32);
         miGestor.datosUsuarioModificados(antonio);
 
+        miGestor.borrarUsuario(ivan);
+
         // Recuperar 1 de ellos e imprimirlo por la consola
         Usuario paraConsultar=miGestor.getUsuario("antonio@gmail.com");
         System.out.println("Nombre: "+paraConsultar.getNombre());
