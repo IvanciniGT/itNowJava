@@ -19,14 +19,14 @@
         GestorUsuarios miGestor=new GestorUsuarios();
 
         // Dar de alta 2 usuarios en el gestor de usuarios (datos fijos)
-        Usuario ivan=miGestor.newUsuario("ivan.osuna@gmail.com");
-        ivan.setNombre("Ivan");
-        ivan.setApellidos("Osuna");
-        ivan.setEdad(42);
+        Usuario ivan=miGestor.newUsuario("Ivan","Osuna",42,"ivan.osuna@gmail.com");
+//        ivan.setNombre("Ivan");
+//        ivan.setApellidos("Osuna");
+        ivan.setEdad(39);
         miGestor.datosUsuarioModificados(ivan);
         
         // Recuperar 1 de ellos e imprimirlo por la consola
-        Usuario ivanRecuperado=miGestor.getUsuario("ivan.osuna@gmail.com");
+        Usuario ivanRecuperado=miGestor.getUsuario(ivan.getId());
         </jsp:scriptlet>
     
         <!-- <p>Resultado de la suma:  </p> -->

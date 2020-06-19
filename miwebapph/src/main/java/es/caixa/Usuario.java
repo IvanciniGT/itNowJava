@@ -1,14 +1,24 @@
 package es.caixa;
 
-public class Usuario{
+import java.io.Serializable;
+
+public class Usuario implements Serializable{
     
     // Propiedades
+    private Integer id;
     private String nombre;
     private String apellidos;
-    private int edad;
+    private Integer edad;
     private String email; 
+    
     // Constructores
-    public Usuario(String email){
+    public Usuario(){
+    }
+    
+    public Usuario(String nombre, String apellidos, Integer edad, String email){
+       setNombre(nombre);
+       setApellidos(apellidos);
+       setEdad(edad);
        setEmail(email);
     }
     // Funciones
@@ -31,11 +41,28 @@ public class Usuario{
     public String getApellidos(){
         return this.apellidos;
     }
-    public void setEdad(int edad){
+    public void setEdad(Integer edad){
         this.edad=edad;
     }
-    public int getEdad(){
+    public Integer getEdad(){
         return this.edad;
     }
     
+    public void setId(Integer id){
+        this.id=id;
+    }
+    public Integer getId(){
+        return this.id;
+    }
+    
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", email='" + email + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }

@@ -4,7 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-
+<!--
     <servlet>
         <servlet-name>MiServlet</servlet-name>
         <servlet-class>es.caixa.MiServlet</servlet-class>
@@ -14,7 +14,7 @@
         <servlet-name>MiServlet</servlet-name>
         <url-pattern>/Saludo</url-pattern>
     </servlet-mapping>
-
+-->
     <resource-ref>
         <description>mimariadb</description>
         <res-ref-name>jdbc/mimariadb</res-ref-name>
