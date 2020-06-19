@@ -19,7 +19,7 @@
         GestorUsuarios miGestor=new GestorUsuarios();
 
         // Dar de alta 2 usuarios en el gestor de usuarios (datos fijos)
-        Usuario ivan=miGestor.newUsuario("Ivan","Osuna",42,"ivan.osuna@gmail.com");
+        Usuario ivan=miGestor.newUsuario("Ivan","Osuna",42,System.currentTimeMillis()+"@gmail.com");
 //        ivan.setNombre("Ivan");
 //        ivan.setApellidos("Osuna");
         ivan.setEdad(39);
